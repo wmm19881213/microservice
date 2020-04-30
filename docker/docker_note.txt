@@ -1,5 +1,5 @@
 centos:
-1¡¢Ğ¶ÔØÀÏ°æ±¾£º
+1ã€å¸è½½è€ç‰ˆæœ¬ï¼š
 sudo yum remove docker \
                   docker-client \
                   docker-client-latest \
@@ -8,52 +8,52 @@ sudo yum remove docker \
                   docker-latest-logrotate \
                   docker-logrotate \
                   docker-engine
-2¡¢°²×°²Ö¿â£º
+2ã€å®‰è£…ä»“åº“ï¼š
 $ sudo yum install -y yum-utils \
   device-mapper-persistent-data \
   lvm2
 
-3¡¢°²×°docker
+3ã€å®‰è£…docker
 $ sudo yum install docker-ce docker-ce-cli containerd.io
 
-ÌáÊ¾ containerd.io °æ±¾ÎÊÌâÊ±£¬°²×°×îĞÂ°æ±¾£º
+æç¤º containerd.io ç‰ˆæœ¬é—®é¢˜æ—¶ï¼Œå®‰è£…æœ€æ–°ç‰ˆæœ¬ï¼š
 wget https://download.docker.com/linux/centos/7/x86_64/edge/Packages/containerd.io-1.2.6-3.3.el7.x86_64.rpm
  yum -y install containerd.io-1.2.6-3.3.el7.x86_64.rpm
  
- 4¡¢Æô¶¯docker
+ 4ã€å¯åŠ¨docker
 sudo systemctl start docker
-Í¨¹ıÔËĞĞ hello-world Ó³ÏñÀ´ÑéÖ¤ÊÇ·ñÕıÈ·°²×°ÁË Docker Engine-Community ¡£
+é€šè¿‡è¿è¡Œ hello-world æ˜ åƒæ¥éªŒè¯æ˜¯å¦æ­£ç¡®å®‰è£…äº† Docker Engine-Community ã€‚
 sudo docker run hello-world
 
 
-5¡¢²é¿´ÃüÁî£º
+5ã€æŸ¥çœ‹å‘½ä»¤ï¼š
 docker 
-ÃüÁîÏêÏ¸£º
+å‘½ä»¤è¯¦ç»†ï¼š
 docker stats --help
 
-6¡¢»ñÈ¡¾µÏñ
+6ã€è·å–é•œåƒ
 docker pull ubuntu
-7¡¢³£ÓÃÃüÁî
-£¨1£©Æô¶¯ÈİÆ÷
+7ã€å¸¸ç”¨å‘½ä»¤
+ï¼ˆ1ï¼‰å¯åŠ¨å®¹å™¨
  docker run -it ubuntu /bin/bash
 
-²ÎÊıËµÃ÷£º
--i: ½»»¥Ê½²Ù×÷¡£
--t: ÖÕ¶Ë¡£
-ubuntu: ubuntu ¾µÏñ¡£
-/bin/bash£º·ÅÔÚ¾µÏñÃûºóµÄÊÇÃüÁî£¬ÕâÀïÎÒÃÇÏ£ÍûÓĞ¸ö½»»¥Ê½ Shell£¬Òò´ËÓÃµÄÊÇ /bin/bash¡£
-ÒªÍË³öÖÕ¶Ë£¬Ö±½ÓÊäÈë exit:
-£¨2£©²é¿´ËùÓĞµÄÈİÆ÷ÃüÁîÈçÏÂ£ºdocker ps -a
-£¨3£© docker start Æô¶¯Ò»¸öÒÑÍ£Ö¹µÄÈİÆ÷£º
+å‚æ•°è¯´æ˜ï¼š
+-i: äº¤äº’å¼æ“ä½œã€‚
+-t: ç»ˆç«¯ã€‚
+ubuntu: ubuntu é•œåƒã€‚
+/bin/bashï¼šæ”¾åœ¨é•œåƒååçš„æ˜¯å‘½ä»¤ï¼Œè¿™é‡Œæˆ‘ä»¬å¸Œæœ›æœ‰ä¸ªäº¤äº’å¼ Shellï¼Œå› æ­¤ç”¨çš„æ˜¯ /bin/bashã€‚
+è¦é€€å‡ºç»ˆç«¯ï¼Œç›´æ¥è¾“å…¥ exit:
+ï¼ˆ2ï¼‰æŸ¥çœ‹æ‰€æœ‰çš„å®¹å™¨å‘½ä»¤å¦‚ä¸‹ï¼šdocker ps -a
+ï¼ˆ3ï¼‰ docker start å¯åŠ¨ä¸€ä¸ªå·²åœæ­¢çš„å®¹å™¨ï¼š
 		docker start b750bbbcfd88
 		docker stop b750bbbcfd88
 		docker restart b750bbbcfd88
-£¨4£©ºóÌ¨ÔËĞĞ£º
+ï¼ˆ4ï¼‰åå°è¿è¡Œï¼š
  docker run -itd --name ubuntu-test ubuntu /bin/bash
- ×¢£º¼ÓÁË -d ²ÎÊıÄ¬ÈÏ²»»á½øÈëÈİÆ÷£¬ÏëÒª½øÈëÈİÆ÷ĞèÒªÊ¹ÓÃÖ¸Áî docker exec£¨ÏÂÃæ»á½éÉÜµ½£©¡£
- £¨5£©½øÈëÈİÆ÷
-ÔÚÊ¹ÓÃ -d ²ÎÊıÊ±£¬ÈİÆ÷Æô¶¯ºó»á½øÈëºóÌ¨¡£´ËÊ±ÏëÒª½øÈëÈİÆ÷£¬¿ÉÒÔÍ¨¹ıÒÔÏÂÖ¸Áî½øÈë£º
+ æ³¨ï¼šåŠ äº† -d å‚æ•°é»˜è®¤ä¸ä¼šè¿›å…¥å®¹å™¨ï¼Œæƒ³è¦è¿›å…¥å®¹å™¨éœ€è¦ä½¿ç”¨æŒ‡ä»¤ docker execï¼ˆä¸‹é¢ä¼šä»‹ç»åˆ°ï¼‰ã€‚
+ ï¼ˆ5ï¼‰è¿›å…¥å®¹å™¨
+åœ¨ä½¿ç”¨ -d å‚æ•°æ—¶ï¼Œå®¹å™¨å¯åŠ¨åä¼šè¿›å…¥åå°ã€‚æ­¤æ—¶æƒ³è¦è¿›å…¥å®¹å™¨ï¼Œå¯ä»¥é€šè¿‡ä»¥ä¸‹æŒ‡ä»¤è¿›å…¥ï¼š
 
 docker attach
 
-docker exec£ºÍÆ¼ö´ó¼ÒÊ¹ÓÃ docker exec ÃüÁî£¬ÒòÎª´ËÍË³öÈİÆ÷ÖÕ¶Ë£¬²»»áµ¼ÖÂÈİÆ÷µÄÍ£
+docker execï¼šæ¨èå¤§å®¶ä½¿ç”¨ docker exec å‘½ä»¤ï¼Œå› ä¸ºæ­¤é€€å‡ºå®¹å™¨ç»ˆç«¯ï¼Œä¸ä¼šå¯¼è‡´å®¹å™¨çš„åœ
