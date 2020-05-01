@@ -56,4 +56,4 @@ ubuntu: ubuntu 镜像。
 
 docker attach
 
-docker exec：推荐大家使用 docker exec 命令，因为此退出容器终端，不会导致容器的停
+docker exec:推荐大家使用 docker exec 命令，因为此退出容器终端，不会导致容器的停
